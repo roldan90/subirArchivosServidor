@@ -22,7 +22,19 @@
         <tr>
             <td><?php echo $idArchivo = $mostrar['id_archivo']; ?></td>
             <td><?php echo $mostrar['nombre']; ?></td>
-            <td><?php echo $mostrar['extension']; ?></td>
+            <td style="text-align:center">
+                <?php 
+                    $ext = $mostrar['extension'];
+                    $imagen = '';
+                    if ($ext == "pptx" || $ext == "PPTX") {
+                        $imagen = '<img src="https://image.flaticon.com/icons/png/128/888/888874.png" width="50px" height="50px">';
+                    } else if ($ext == "xlsx" || $ext == "XLSX") {
+                        $imagen = '<img src="https://cdn.icon-icons.com/icons2/1156/PNG/512/1486565571-microsoft-office-excel_81549.png" width="50px" height="50px">';
+                    }
+
+                    echo $imagen;
+                ?>
+            </td>
             <td><?php echo $mostrar['descripcion']; ?></td>
             <td>
                 <a class="btn btn-success" download='<?php echo $mostrar['nombre'] ?>' 
