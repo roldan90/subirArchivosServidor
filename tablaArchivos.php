@@ -12,6 +12,7 @@
         <th>Nombre</th>
         <th>Tipo archivo</th>
         <th>Descripcion</th>
+        <th>Imagen</th>
         <th>Descargar</th>
         <th>Eliminar</th>
     </thead>
@@ -36,6 +37,15 @@
                 ?>
             </td>
             <td><?php echo $mostrar['descripcion']; ?></td>
+            <td>
+                <?php
+
+                    if ($ext == 'jpg') {
+                        $cadenaImagen = '<img src=' . 'archivos/' . $mostrar['nombre'] . ' width="50px" height="50px">';
+                        echo '<a href="visualizarFull.php?nombre=' . $mostrar['nombre'] . '" target="_blank"> ' . $cadenaImagen . ' </a>';
+                    } 
+                ?>
+            </td>
             <td>
                 <a class="btn btn-success" download='<?php echo $mostrar['nombre'] ?>' 
                     href='<?php echo "archivos/" . $mostrar['nombre'] ?>'>
